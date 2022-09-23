@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Intermediario;
+
 
 namespace RotaVotacion2
 {
     public partial class Resultados : Form
     {
+        IntermediarioCBD ICBD = new IntermediarioCBD();
         public Resultados()
         {
             InitializeComponent();
@@ -25,6 +28,12 @@ namespace RotaVotacion2
         {
             Contador=Contador+1;
             ContadorDeVueltas.Text = Contador.ToString();
+            ActualizarResultados();
+
+            if (LblTotales.Text == LblClubsYaVotados.Text)
+            {
+                Temporizador.Stop();
+            }
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
@@ -40,6 +49,21 @@ namespace RotaVotacion2
         private void BtnReanudar_Click(object sender, EventArgs e)
         {
             Temporizador.Start();
+        }
+
+
+        private void ActualizarResultados()
+        {
+            int Sumador = 0;
+            int negativo = ICBD.ConsultarRespuestas(1);
+            int Abstencion = ICBD.ConsultarRespuestas(2);
+            int Positivo = ICBD.ConsultarRespuestas(3);
+            Sumador = negativo + Abstencion + Positivo;
+            LblClubsYaVotados.Text = Sumador.ToString();
+
+            LblNegativo.Text = negativo.ToString();
+            LblAbstencion.Text = Abstencion.ToString();
+            LblPositivo.Text = Positivo.ToString();
         }
     }
 }

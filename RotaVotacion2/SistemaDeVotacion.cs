@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Intermediario;
 namespace RotaVotacion2
 {
     public partial class SistemaDeVotacion : Form
     {
+        IntermediarioCBD ICBD = new IntermediarioCBD();
         public SistemaDeVotacion()
         {
             InitializeComponent();
@@ -63,14 +64,22 @@ namespace RotaVotacion2
             {
                 if (TxtMocion.Text != "")
                 {
-                    //c.GenerarPregunta(Int32.Parse(LblNumReu.Text), TxtMocion.Text, TxtClubesHabilitados.Text);
-                    Resultados Resul = new Resultados();
-                    AddOwnedForm(Resul);
-                    this.Hide();
-                    Resul.LblTotales.Text = this.LblClubesHabilitados.Text;
-                    Resul.ShowDialog();
-                    TxtMocion.Text = "";
-                    this.Show();
+                    if (ICBD.CargarMocion(TxtMocion.Text, Int32.Parse(LblNumReu.Text)) !=0)
+                    {
+                        //c.GenerarPregunta(Int32.Parse(LblNumReu.Text), TxtMocion.Text, TxtClubesHabilitados.Text);
+                        Resultados Resul = new Resultados();
+                        AddOwnedForm(Resul);
+                        this.Hide();
+                        Resul.LblTotales.Text = this.LblClubesHabilitados.Text;
+                        Resul.ShowDialog();
+                        TxtMocion.Text = "";
+                        this.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo cargar la mocion en la base de datos");
+                    }
+                    
                 }
                 else
                 {
@@ -81,6 +90,11 @@ namespace RotaVotacion2
             {
                 MessageBox.Show("Tienes que seleccionar los clubes habilitados previamente");
             }
+        }
+
+        private void TxtNumReu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarCampos.SoloNumeros(e);
         }
     }
 }

@@ -33,11 +33,8 @@ namespace RotaVotacion2
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.nReunionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TxtNumReu = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.CBoxPeriodos = new System.Windows.Forms.ToolStripComboBox();
             this.BtnHabilitar = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TxtMocion = new System.Windows.Forms.TextBox();
             this.BtnEnviar = new System.Windows.Forms.Button();
@@ -72,8 +69,7 @@ namespace RotaVotacion2
             // nReunionToolStripMenuItem
             // 
             this.nReunionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TxtNumReu,
-            this.toolStripMenuItem1});
+            this.TxtNumReu});
             this.nReunionToolStripMenuItem.Name = "nReunionToolStripMenuItem";
             this.nReunionToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.nReunionToolStripMenuItem.Text = "N° Reunion";
@@ -84,21 +80,8 @@ namespace RotaVotacion2
             this.TxtNumReu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TxtNumReu.Name = "TxtNumReu";
             this.TxtNumReu.Size = new System.Drawing.Size(150, 27);
+            this.TxtNumReu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumReu_KeyPress);
             this.TxtNumReu.TextChanged += new System.EventHandler(this.TxtNumReu_TextChanged);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CBoxPeriodos});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.toolStripMenuItem1.Text = "Periodo:";
-            // 
-            // CBoxPeriodos
-            // 
-            this.CBoxPeriodos.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.CBoxPeriodos.Name = "CBoxPeriodos";
-            this.CBoxPeriodos.Size = new System.Drawing.Size(121, 28);
             // 
             // BtnHabilitar
             // 
@@ -111,20 +94,11 @@ namespace RotaVotacion2
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 109);
+            this.label1.Location = new System.Drawing.Point(395, 110);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Clubes Habilitados:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(424, 108);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Periodo:";
             // 
             // label3
             // 
@@ -158,7 +132,7 @@ namespace RotaVotacion2
             // 
             this.LblClubesHabilitados.AutoSize = true;
             this.LblClubesHabilitados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblClubesHabilitados.Location = new System.Drawing.Point(200, 109);
+            this.LblClubesHabilitados.Location = new System.Drawing.Point(575, 110);
             this.LblClubesHabilitados.Name = "LblClubesHabilitados";
             this.LblClubesHabilitados.Size = new System.Drawing.Size(19, 20);
             this.LblClubesHabilitados.TabIndex = 7;
@@ -168,7 +142,7 @@ namespace RotaVotacion2
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 73);
+            this.label4.Location = new System.Drawing.Point(40, 110);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 20);
             this.label4.TabIndex = 8;
@@ -178,11 +152,11 @@ namespace RotaVotacion2
             // 
             this.LblNumReu.AutoSize = true;
             this.LblNumReu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNumReu.Location = new System.Drawing.Point(139, 73);
+            this.LblNumReu.Location = new System.Drawing.Point(156, 110);
             this.LblNumReu.Name = "LblNumReu";
-            this.LblNumReu.Size = new System.Drawing.Size(23, 20);
+            this.LblNumReu.Size = new System.Drawing.Size(19, 20);
             this.LblNumReu.TabIndex = 9;
-            this.LblNumReu.Text = "--";
+            this.LblNumReu.Text = "0";
             // 
             // SistemaDeVotacion
             // 
@@ -195,7 +169,6 @@ namespace RotaVotacion2
             this.Controls.Add(this.BtnEnviar);
             this.Controls.Add(this.TxtMocion);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtClubesHabilitados);
             this.Controls.Add(this.menuStrip1);
@@ -216,7 +189,6 @@ namespace RotaVotacion2
         private System.Windows.Forms.ToolStripMenuItem nReunionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BtnHabilitar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtMocion;
         private System.Windows.Forms.Button BtnEnviar;
@@ -224,8 +196,6 @@ namespace RotaVotacion2
         private System.Windows.Forms.ToolStripTextBox TxtNumReu;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label LblNumReu;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripComboBox CBoxPeriodos;
     }
 }
 

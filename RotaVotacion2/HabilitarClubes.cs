@@ -26,7 +26,7 @@ namespace RotaVotacion2
             this.Close();
         }
 
-        //boton de confirmar envia los datos
+        //boton de confirmar y envia los datos
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
 
@@ -47,10 +47,28 @@ namespace RotaVotacion2
             }
             else
             {
-                //el owner sirve para enviar datos al form padre
-                SistemaDeVotacion SisVot = Owner as SistemaDeVotacion;
-                SisVot.ActualizarTxtArea(Habilitados);
-                this.Close();
+                if (ICBD.LimpiarClubesHabilitados()!=0)
+                {
+                    if (ICBD.CargarClubesHabilitados(Habilitados) != 0)
+                    {
+                        //el owner sirve para enviar datos al form padre
+                        SistemaDeVotacion SisVot = Owner as SistemaDeVotacion;
+                        SisVot.ActualizarTxtArea(Habilitados);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudieron cargar los campos de la tabla");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se pudieron borrar los campos de la tabla");
+                }
+
+                
+
+                
             }
         }
 
@@ -59,18 +77,12 @@ namespace RotaVotacion2
 
 
 
-        //aca se encuentran los nombres de los clubes que hay que cargar (posteriormente los pondre
-        //en la base de datos)
+        //aca se encuentran los nombres de los clubes que hay que cargar
         private void CargarChecks()
         {
 
-            //Cargar o sacar los clubes en este array (cambiar esto a un llamado desde la base de datos)
-            string[] Clubes = {"Armstrong", "Capitán Bermudez","Casilda","Cañada de Gómez","Ceres EF","Colón",
-                "Esperanza","Federal","Firmat","Fray Bentos","Gálvez","Gualeguaychú","Las Parejas EF",
-                "María Susana","Paraná","Rafaela","Rosario","Rosario Norte","Rosario Plaza de la Bandera",
-                "Rosario Sud","Salto","Salto Noreste","Salto Grande Concordia","San Javier","San Jorge EF",
-                "San Justo","Santa Fe","Santo Tomé EF","Sunchales,Totoras","Venado Tuerto","Venado Tuerto 50°",
-                "Villa Constitución"};
+            //Carga los clubes que estan subidos y habilitados 
+           
             foreach (var CheckClub in ICBD.ConsultarClubesHabilitados())
             {
                 Clubes_Habilitados.Items.Add(CheckClub);

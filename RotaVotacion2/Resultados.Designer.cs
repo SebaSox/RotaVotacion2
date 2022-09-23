@@ -30,11 +30,11 @@ namespace RotaVotacion2
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.LblNegativo = new System.Windows.Forms.Label();
+            this.LblAbstencion = new System.Windows.Forms.Label();
+            this.LblPositivo = new System.Windows.Forms.Label();
             this.LblTotales = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.LblClubsYaVotados = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.BtnReanudar = new System.Windows.Forms.Button();
             this.BtnPausar = new System.Windows.Forms.Button();
@@ -43,35 +43,38 @@ namespace RotaVotacion2
             this.ContadorDeVueltas = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // LblNegativo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 201);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 238);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "0";
+            this.LblNegativo.AutoSize = true;
+            this.LblNegativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNegativo.ForeColor = System.Drawing.Color.Red;
+            this.LblNegativo.Location = new System.Drawing.Point(11, 201);
+            this.LblNegativo.Name = "LblNegativo";
+            this.LblNegativo.Size = new System.Drawing.Size(216, 238);
+            this.LblNegativo.TabIndex = 0;
+            this.LblNegativo.Text = "0";
             // 
-            // label2
+            // LblAbstencion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(510, 201);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(216, 238);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "0";
+            this.LblAbstencion.AutoSize = true;
+            this.LblAbstencion.Font = new System.Drawing.Font("Microsoft Sans Serif", 125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblAbstencion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.LblAbstencion.Location = new System.Drawing.Point(510, 201);
+            this.LblAbstencion.Name = "LblAbstencion";
+            this.LblAbstencion.Size = new System.Drawing.Size(216, 238);
+            this.LblAbstencion.TabIndex = 1;
+            this.LblAbstencion.Text = "0";
             // 
-            // label3
+            // LblPositivo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(991, 201);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(216, 238);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "0";
+            this.LblPositivo.AutoSize = true;
+            this.LblPositivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPositivo.ForeColor = System.Drawing.Color.Lime;
+            this.LblPositivo.Location = new System.Drawing.Point(991, 201);
+            this.LblPositivo.Name = "LblPositivo";
+            this.LblPositivo.Size = new System.Drawing.Size(216, 238);
+            this.LblPositivo.TabIndex = 2;
+            this.LblPositivo.Text = "0";
             // 
             // LblTotales
             // 
@@ -83,16 +86,16 @@ namespace RotaVotacion2
             this.LblTotales.TabIndex = 3;
             this.LblTotales.Text = "0";
             // 
-            // label6
+            // LblClubsYaVotados
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(619, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(130, 142);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "0";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LblClubsYaVotados.AutoSize = true;
+            this.LblClubsYaVotados.Font = new System.Drawing.Font("Microsoft Sans Serif", 75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblClubsYaVotados.Location = new System.Drawing.Point(619, 28);
+            this.LblClubsYaVotados.Name = "LblClubsYaVotados";
+            this.LblClubsYaVotados.Size = new System.Drawing.Size(130, 142);
+            this.LblClubsYaVotados.TabIndex = 3;
+            this.LblClubsYaVotados.Text = "0";
+            this.LblClubsYaVotados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
@@ -158,11 +161,11 @@ namespace RotaVotacion2
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.BtnPausar);
             this.Controls.Add(this.BtnReanudar);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.LblClubsYaVotados);
             this.Controls.Add(this.LblTotales);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LblPositivo);
+            this.Controls.Add(this.LblAbstencion);
+            this.Controls.Add(this.LblNegativo);
             this.Controls.Add(this.label4);
             this.Name = "Resultados";
             this.Text = "Resultados";
@@ -174,10 +177,10 @@ namespace RotaVotacion2
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label LblNegativo;
+        private System.Windows.Forms.Label LblAbstencion;
+        private System.Windows.Forms.Label LblPositivo;
+        private System.Windows.Forms.Label LblClubsYaVotados;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button BtnReanudar;
         private System.Windows.Forms.Button BtnPausar;
