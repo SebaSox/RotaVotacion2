@@ -1,0 +1,22 @@
+.card__content {
+    margin: 10px;
+    margin-top: -50px;
+    font-size: 20px;
+    line-height: 20px;
+    color: #333;
+  }
+.card__form button{
+    padding: 1em;
+    width: 300px;
+    margin-bottom:10px ;
+}
+
+#Positivo{
+    background: rgb(51, 197, 25);
+}
+#Abstencion{
+    background: rgb(196, 199, 15);
+}
+#Negativo{
+    background: rgb(209, 23, 23);
+}

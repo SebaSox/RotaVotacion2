@@ -1,0 +1,74 @@
+body{
+    background-color: #d61c5b;
+}
+/*comienza el index*/
+.Contenedor{
+    height:100%;
+    width: 100%;
+    position: relative;
+}
+.card {
+    width: 350px;
+    height: 500px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    background:#e6779d;
+    border-radius: 20px;
+
+
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 30%);
+  }
+  
+  .card > * {
+    margin: 0;
+  }
+  
+  .card__title {
+    color: #333;
+  }
+  
+  
+  .card__content {
+    margin: 10px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #333;
+  }
+  
+  .card__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .card__form input {
+    margin-top: 10px;
+    outline: 0;
+    background: rgb(255, 255, 255);
+    box-shadow: transparent 0px 0px 0px 1px inset;
+    padding: 0.6em;
+    border-radius: 14px;
+    border: 1px solid #333;
+    color: black;
+  }
+  
+  .card__form button {
+    border: 0;
+    background: #111;
+    color: #fff;
+    padding: 0.68em;
+    border-radius: 14px;
+    font-weight: bold;
+  }
+  
+  .sign-up:hover {
+    opacity: 0.8;
+  } 
+  /*Termina el index*/
