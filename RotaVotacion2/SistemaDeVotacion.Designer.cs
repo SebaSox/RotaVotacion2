@@ -34,6 +34,7 @@ namespace RotaVotacion2
             this.nReunionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TxtNumReu = new System.Windows.Forms.ToolStripTextBox();
             this.BtnHabilitar = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnHistorial = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TxtMocion = new System.Windows.Forms.TextBox();
@@ -46,6 +47,7 @@ namespace RotaVotacion2
             // 
             // TxtClubesHabilitados
             // 
+            this.TxtClubesHabilitados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtClubesHabilitados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtClubesHabilitados.Location = new System.Drawing.Point(9, 170);
             this.TxtClubesHabilitados.Multiline = true;
@@ -59,7 +61,8 @@ namespace RotaVotacion2
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nReunionToolStripMenuItem,
-            this.BtnHabilitar});
+            this.BtnHabilitar,
+            this.BtnHistorial});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(636, 28);
@@ -89,6 +92,13 @@ namespace RotaVotacion2
             this.BtnHabilitar.Size = new System.Drawing.Size(117, 24);
             this.BtnHabilitar.Text = "Activar Clubes";
             this.BtnHabilitar.Click += new System.EventHandler(this.BtnHabilitar_Click);
+            // 
+            // BtnHistorial
+            // 
+            this.BtnHistorial.Name = "BtnHistorial";
+            this.BtnHistorial.Size = new System.Drawing.Size(168, 24);
+            this.BtnHistorial.Text = "Historial de mociones";
+            this.BtnHistorial.Click += new System.EventHandler(this.BtnHistorial_Click);
             // 
             // label1
             // 
@@ -172,7 +182,9 @@ namespace RotaVotacion2
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtClubesHabilitados);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "SistemaDeVotacion";
             this.Text = "Sistema de Votacion";
             this.menuStrip1.ResumeLayout(false);
@@ -196,6 +208,7 @@ namespace RotaVotacion2
         private System.Windows.Forms.ToolStripTextBox TxtNumReu;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label LblNumReu;
+        private System.Windows.Forms.ToolStripMenuItem BtnHistorial;
     }
 }
 

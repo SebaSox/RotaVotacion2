@@ -96,5 +96,14 @@ namespace RotaVotacion2
         {
             ValidarCampos.SoloNumeros(e);
         }
+
+        private void BtnHistorial_Click(object sender, EventArgs e)
+        {
+            Historial historial = new Historial();
+            AddOwnedForm(historial);
+            this.Hide();
+            historial.ShowDialog();
+            this.Show();
+        }
     }
 }

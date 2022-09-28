@@ -22,6 +22,7 @@ namespace RotaVotacion2
         private void Resultados_Load(object sender, EventArgs e)
         {
             Temporizador.Start();
+            LblMocion.Text= ICBD.TraerUltimaMocionString();
         }
         public int Contador = 0;
         private void Temporizador_Tick(object sender, EventArgs e)

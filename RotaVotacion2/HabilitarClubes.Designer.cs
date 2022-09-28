@@ -83,6 +83,8 @@ namespace RotaVotacion2
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.BtnReiniciar);
             this.Controls.Add(this.Clubes_Habilitados);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "HabilitarClubes";
             this.Text = "HabiliarClubes";
             this.ResumeLayout(false);

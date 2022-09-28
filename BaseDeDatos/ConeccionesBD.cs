@@ -85,7 +85,25 @@ namespace BaseDeDatos
             return bandera;
         }
 
+
+
         //Resultados
+
+        public string TraerUltimaMocionString()
+        {
+            string UltiMocion = null;
+            string Consulta = "SELECT TOP 1 Mocion FROM [dbo].[Mocion] ORDER BY Id DESC";
+            SqlCommand cmd = new SqlCommand(Consulta, DCon);
+            DCon.Open();
+            SqlDataReader data = cmd.ExecuteReader();
+            if (data.Read())
+            {
+                UltiMocion = data["Mocion"].ToString();
+            }
+
+            DCon.Close();
+            return UltiMocion;
+        }
 
         public int TraerUltimaMocion()
         {
@@ -122,24 +140,20 @@ namespace BaseDeDatos
 
 
 
+        //Historial
 
-        //public int ConsultarRespuestas(int NumVot)
-        //{
-        //    int CantidadVotos = 0;
-        //    string Consulta = "SELECT COUNT(voto) as CantVotos " +
-        //        "FROM[RotaVotacion].[dbo].[Respuestas] WHERE Voto = " + NumVot + "and [IdMocion] =" + 4;
-        //    SqlCommand cmd = new SqlCommand(Consulta, DCon);
-        //    DCon.Open();
-        //    SqlDataReader data = cmd.ExecuteReader();
-        //    if (data.Read())
-        //    {
-        //        CantidadVotos = Int32.Parse(data["CantVotos"].ToString());
-        //    }
 
-        //    DCon.Close();
-        //    return CantidadVotos;
-        //}
+        public DataTable HistorialMociones()
+        {
+            string Consulta = "SELECT Mocion , Fecha, NumReu as NumeroDeReunion,(SELECT COUNT(voto) FROM[Respuestas] WHERE Voto = 1 and [IdMocion] = Mocion.Id) as Negativo,(SELECT COUNT(voto) FROM[Respuestas] WHERE Voto = 2 and [IdMocion] = Mocion.Id) as Abstencion,(SELECT COUNT(voto) FROM[Respuestas] WHERE Voto = 3 and [IdMocion] = Mocion.Id) as Positivo FROM [dbo].[Mocion] ORDER BY Id DESC";
+            SqlCommand cmd = new SqlCommand(Consulta, DCon);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable Tabla = new DataTable();
+            data.Fill(Tabla);
 
+            return Tabla;
+        }
+        
 
     }
 }
