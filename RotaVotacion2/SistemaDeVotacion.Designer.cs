@@ -29,6 +29,7 @@ namespace RotaVotacion2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SistemaDeVotacion));
             this.TxtClubesHabilitados = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.nReunionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,13 +49,15 @@ namespace RotaVotacion2
             // TxtClubesHabilitados
             // 
             this.TxtClubesHabilitados.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtClubesHabilitados.Enabled = false;
             this.TxtClubesHabilitados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtClubesHabilitados.Location = new System.Drawing.Point(9, 170);
             this.TxtClubesHabilitados.Multiline = true;
             this.TxtClubesHabilitados.Name = "TxtClubesHabilitados";
             this.TxtClubesHabilitados.ReadOnly = true;
             this.TxtClubesHabilitados.Size = new System.Drawing.Size(612, 168);
-            this.TxtClubesHabilitados.TabIndex = 0;
+            this.TxtClubesHabilitados.TabIndex = 999;
+            this.TxtClubesHabilitados.TabStop = false;
             // 
             // menuStrip1
             // 
@@ -183,6 +186,7 @@ namespace RotaVotacion2
             this.Controls.Add(this.TxtClubesHabilitados);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "SistemaDeVotacion";
