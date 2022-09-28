@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using System.Threading.Tasks;
 using BaseDeDatos;
 using System.Collections;
+
 
 
 namespace Intermediario
@@ -44,5 +46,19 @@ namespace Intermediario
             return CBD.ConsultarRespuestas(NumVot);
         }
 
+        public string TraerUltimaMocionString()
+        {
+            return CBD.TraerUltimaMocionString();
+        }
+
+
+
+
+        //Historial
+
+        public DataTable HistorialMociones()
+        {
+            return CBD.HistorialMociones();
+        }
     }
 }

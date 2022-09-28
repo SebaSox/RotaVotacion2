@@ -41,6 +41,7 @@ namespace RotaVotacion2
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.Temporizador = new System.Windows.Forms.Timer(this.components);
             this.ContadorDeVueltas = new System.Windows.Forms.Label();
+            this.LblMocion = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // LblNegativo
@@ -109,7 +110,7 @@ namespace RotaVotacion2
             // 
             // BtnReanudar
             // 
-            this.BtnReanudar.Location = new System.Drawing.Point(792, 442);
+            this.BtnReanudar.Location = new System.Drawing.Point(792, 541);
             this.BtnReanudar.Name = "BtnReanudar";
             this.BtnReanudar.Size = new System.Drawing.Size(216, 96);
             this.BtnReanudar.TabIndex = 5;
@@ -119,7 +120,7 @@ namespace RotaVotacion2
             // 
             // BtnPausar
             // 
-            this.BtnPausar.Location = new System.Drawing.Point(510, 441);
+            this.BtnPausar.Location = new System.Drawing.Point(510, 540);
             this.BtnPausar.Name = "BtnPausar";
             this.BtnPausar.Size = new System.Drawing.Size(216, 96);
             this.BtnPausar.TabIndex = 6;
@@ -129,7 +130,7 @@ namespace RotaVotacion2
             // 
             // BtnCerrar
             // 
-            this.BtnCerrar.Location = new System.Drawing.Point(229, 441);
+            this.BtnCerrar.Location = new System.Drawing.Point(229, 540);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(216, 96);
             this.BtnCerrar.TabIndex = 7;
@@ -152,11 +153,25 @@ namespace RotaVotacion2
             this.ContadorDeVueltas.TabIndex = 8;
             this.ContadorDeVueltas.Text = "0";
             // 
+            // LblMocion
+            // 
+            this.LblMocion.Enabled = false;
+            this.LblMocion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMocion.Location = new System.Drawing.Point(335, 443);
+            this.LblMocion.Multiline = true;
+            this.LblMocion.Name = "LblMocion";
+            this.LblMocion.ReadOnly = true;
+            this.LblMocion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.LblMocion.Size = new System.Drawing.Size(574, 76);
+            this.LblMocion.TabIndex = 9;
+            this.LblMocion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Resultados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1219, 550);
+            this.ClientSize = new System.Drawing.Size(1219, 648);
+            this.Controls.Add(this.LblMocion);
             this.Controls.Add(this.ContadorDeVueltas);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.BtnPausar);
@@ -167,6 +182,8 @@ namespace RotaVotacion2
             this.Controls.Add(this.LblAbstencion);
             this.Controls.Add(this.LblNegativo);
             this.Controls.Add(this.label4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Resultados";
             this.Text = "Resultados";
             this.Load += new System.EventHandler(this.Resultados_Load);
@@ -188,5 +205,6 @@ namespace RotaVotacion2
         internal System.Windows.Forms.Label LblTotales;
         private System.Windows.Forms.Timer Temporizador;
         private System.Windows.Forms.Label ContadorDeVueltas;
+        private System.Windows.Forms.TextBox LblMocion;
     }
 }
