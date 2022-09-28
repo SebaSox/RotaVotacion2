@@ -29,6 +29,7 @@ namespace RotaVotacion2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HabilitarClubes));
             this.Clubes_Habilitados = new System.Windows.Forms.CheckedListBox();
             this.BtnReiniciar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
@@ -84,6 +85,7 @@ namespace RotaVotacion2
             this.Controls.Add(this.BtnReiniciar);
             this.Controls.Add(this.Clubes_Habilitados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "HabilitarClubes";
             this.Text = "HabiliarClubes";

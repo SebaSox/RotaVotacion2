@@ -29,6 +29,7 @@ namespace RotaVotacion2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Historial));
             this.DGVPlanilla = new System.Windows.Forms.DataGridView();
             this.BtnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVPlanilla)).BeginInit();
@@ -66,6 +67,7 @@ namespace RotaVotacion2
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.DGVPlanilla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Historial";
             this.Text = "Historial";

@@ -30,6 +30,7 @@ namespace RotaVotacion2
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resultados));
             this.LblNegativo = new System.Windows.Forms.Label();
             this.LblAbstencion = new System.Windows.Forms.Label();
             this.LblPositivo = new System.Windows.Forms.Label();
@@ -183,6 +184,7 @@ namespace RotaVotacion2
             this.Controls.Add(this.LblNegativo);
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Resultados";
             this.Text = "Resultados";
